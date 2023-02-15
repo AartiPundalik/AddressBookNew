@@ -6,10 +6,15 @@ using System.Threading.Tasks;
 
 namespace AddressBookNew
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
+            
+            AddressBook addressBook = new AddressBook();
+            addressBook.CreateContact();
+            addressBook.Display();
+            Console.ReadLine();
         }
     }
 }
