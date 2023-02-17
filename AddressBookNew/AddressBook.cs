@@ -23,7 +23,7 @@ namespace AddressBookNew
             Console.WriteLine("Enter your City");
             contact.City = Console.ReadLine();
             Console.WriteLine("Enter your state");
-            contact.State =(Console.ReadLine());
+            contact.State = (Console.ReadLine());
             Console.WriteLine("Enter your Zip Code");
             contact.zip = Console.ReadLine();
             Console.WriteLine("Enter your Phone Number");
@@ -47,12 +47,12 @@ namespace AddressBookNew
                 Console.WriteLine("Email" + contact.Email);
 
                 //foreach (var contact in contactList)
-                
-            //    Console.WriteLine("Contact Details As Mentioned Below " + "\n\n First Name : " + contact.FirstName + "\n Last Name : " + contact.LastName + "\n Address : " + contact.Address + "\n City : " + contact.City + "\n State : " + contact.state + "\n Zip : " + contact.Zip + "\n Phone Number : " + contact.PhoneNumber + "\n Email : " + contact.Email);
-            //}
-        }
 
-    }
+                //    Console.WriteLine("Contact Details As Mentioned Below " + "\n\n First Name : " + contact.FirstName + "\n Last Name : " + contact.LastName + "\n Address : " + contact.Address + "\n City : " + contact.City + "\n State : " + contact.state + "\n Zip : " + contact.Zip + "\n Phone Number : " + contact.PhoneNumber + "\n Email : " + contact.Email);
+                //}
+            }
+
+        }
 
         public void EditContact(string name)
         {
@@ -107,8 +107,28 @@ namespace AddressBookNew
                 }
             }
         }
+
+
+    
+    public void DeleteContact()
+    {
+        Console.WriteLine("Enter the First Name");
+        string name = Console.ReadLine();
+        Contact deleteContact = new Contact();
+        foreach(var contact in contactList.ToList())
+        {
+            if (contact.FirstName.Equals(name))
+            {
+                deleteContact = contact;
+
+            }
+            contactList.Remove(deleteContact);
+            Console.WriteLine("Contact has been deleted");
+        }
     }
 }
+}
+
 
     
 

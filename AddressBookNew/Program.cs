@@ -19,7 +19,8 @@ namespace AddressBookNew
                 Console.WriteLine("Select 1: For Creating Contact\n" +
                     "Select 2:Edit Existing Contact\n" +
                     "Select 3:To Display\n" +
-                    "Select 4:To stop\n");
+                    "Select 4: Delete Contact\n" +
+                     "Select 5:To stop\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -41,8 +42,14 @@ namespace AddressBookNew
                         Console.ReadLine();
                         break;
                     case 4:
+                        Console.WriteLine("Delete Contact Details");
+                        addressbook.DeleteContact();
+                        Console.ReadLine();
+                        break;
+                    case 5:
                         flag = false;
                         break;
+
 
                 }
             }
