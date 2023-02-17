@@ -20,7 +20,7 @@ namespace AddressBookNew
                     "Select 2:Edit Existing Contact\n" +
                     "Select 3:To Display\n" +
                     "Select 4: Delete Contact\n" +
-                     "Select 5:To stop\n");
+                     "Select 5: To Stop\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
