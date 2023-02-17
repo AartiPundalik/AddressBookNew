@@ -10,11 +10,42 @@ namespace AddressBookNew
     {
         static void Main(string[] args)
         {
-            
-            AddressBook addressBook = new AddressBook();
-            addressBook.CreateContact();
-            addressBook.Display();
-            Console.ReadLine();
+
+            Console.WriteLine("Welcome TO Address Book Problem");
+            AddressBook addressbook = new AddressBook();
+            bool flag = true;
+            while (flag)
+            {
+                Console.WriteLine("Select 1: For Creating Contact\n" +
+                    "Select 2:Edit Existing Contact\n" +
+                    "Select 3:To Display\n" +
+                    "Select 4:To stop\n");
+                int option = Convert.ToInt32(Console.ReadLine());
+                switch (option)
+                {
+                    case 1:
+                        addressbook.CreateContact();
+                        addressbook.Display();
+                        Console.ReadLine();
+
+                        break;
+                    case 2:
+                        string name = Console.ReadLine();
+                        addressbook.EditContact(name);
+                        addressbook.Display(); Console.ReadLine();
+                        
+                        break;
+                    case 3:
+                        Console.WriteLine("Display Contact Details");
+                        addressbook.Display();
+                        Console.ReadLine();
+                        break;
+                    case 4:
+                        flag = false;
+                        break;
+
+                }
+            }
         }
     }
 }
